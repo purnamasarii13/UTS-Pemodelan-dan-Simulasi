@@ -1,0 +1,228 @@
+/* ============ GLOBAL & BACKGROUND ============ */
+
+body {
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top left, #0ea5e9 0, #0f172a 40%, #020617 100%);
+    background-size: 220% 220%;
+    animation: bg-move 22s ease-in-out infinite;
+    color: #e5e7eb;
+}
+
+@keyframes bg-move {
+    0%   { background-position: 0% 0%; }
+    50%  { background-position: 100% 60%; }
+    100% { background-position: 0% 0%; }
+}
+
+.main-container {
+    max-width: 1100px;
+}
+
+/* ============ TOMBOL JUDUL NEON (LEBIH BESAR) ============ */
+
+.title-button {
+    display: inline-block;
+    width: 100%;
+    max-width: 1000px;
+    border: none;
+    padding: 1.35rem 2.6rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+    color: #f9fafb;
+    background: linear-gradient(135deg, #22c1c3, #6366f1, #ec4899);
+    background-size: 220% 220%;
+    box-shadow: 0 0 26px rgba(56, 189, 248, 0.95);
+    animation: title-glow 7s ease-in-out infinite;
+    white-space: normal;
+    text-transform: none;
+}
+
+@keyframes title-glow {
+    0%,100% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 26px rgba(56, 189, 248, 0.95);
+        transform: translateY(0);
+    }
+    50% {
+        background-position: 100% 50%;
+        box-shadow: 0 0 34px rgba(244, 114, 182, 1);
+        transform: translateY(-1px);
+    }
+}
+
+/* ============ CARD ============ */
+
+.card-glass {
+    background: radial-gradient(circle at top left,
+                 rgba(51, 65, 85, 0.95),
+                 rgba(15, 23, 42, 0.97));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 1.1rem;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.8);
+    animation: card-appear 0.6s ease-out;
+}
+
+@keyframes card-appear {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* teks penjelasan di bawah judul card */
+.config-desc {
+    color: rgba(226, 232, 240, 0.9);
+}
+
+/* 🔎 PERJELAS SEMUA TEKS MUTED DI BACKGROUND GELAP */
+.text-muted {
+    color: rgba(229, 231, 235, 0.82) !important;
+}
+
+.card-glass .text-muted {
+    color: rgba(229, 231, 235, 0.9) !important;
+}
+
+/* supaya semua paragraf di dalam card tetap terang */
+.card-glass p {
+    color: rgba(229, 231, 235, 0.9);
+}
+
+/* ============ FORM ============ */
+
+.form-label {
+    font-weight: 500;
+}
+
+.form-control,
+.form-select {
+    background-color: rgba(15, 23, 42, 0.96);
+    border-radius: 0.7rem;
+    border: 1px solid rgba(148, 163, 184, 0.75);
+    color: #e5e7eb;
+    font-size: 0.9rem;
+}
+
+.form-control::placeholder {
+    color: #9ca3af;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: rgba(15, 23, 42, 1);
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.8);
+    color: #e5e7eb;
+}
+
+/* tombol Jalankan Simulasi */
+
+.btn-run {
+    border-radius: 999px;
+    background-image: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border: none;
+    box-shadow: 0 14px 32px rgba(37, 99, 235, 0.8);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    font-size: 0.95rem;
+}
+
+.btn-run:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 44px rgba(37, 99, 235, 0.95);
+    filter: brightness(1.06);
+}
+
+/* full width di HP */
+@media (max-width: 767.98px) {
+    .btn-run {
+        width: 100%;
+    }
+}
+
+/* ============ TABEL ============ */
+
+.bg-table {
+    background: radial-gradient(circle at top left,
+                rgba(15, 23, 42, 0.95),
+                rgba(15, 23, 42, 0.9));
+}
+
+.table {
+    font-size: 0.85rem;
+}
+
+.table thead {
+    background: linear-gradient(90deg, #1d4ed8, #4f46e5);
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: rgba(30, 41, 59, 0.9);
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: rgba(17, 24, 39, 0.9);
+}
+
+.table tbody tr:hover {
+    background-color: rgba(59, 130, 246, 0.35);
+}
+
+/* ============ GRAFIK ============ */
+
+.chart-frame {
+    background: radial-gradient(circle at top left, #111827, #020617);
+    border-radius: 0.9rem;
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.8);
+}
+
+.chart-img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/* ============ FOOTER ============ */
+
+footer {
+    color: #e5e7eb;  /* sedikit lebih terang */
+}
+
+/* scroll bar halus (opsional) */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #020617;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.8);
+    border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 1);
+}
+
+/* RESPONSIVE tambahan */
+
+@media (max-width: 767.98px) {
+    .title-button {
+        width: 100%;
+        font-size: 1.05rem;
+        padding: 1.1rem 1.4rem;
+    }
+}
+/* Plotly inside ratio */
+.chart-frame > div {
+    width: 100%;
+    height: 100%;
+}
+
+/* teks info angka setelah klik */
+.chart-info {
+    color: rgba(229, 231, 235, 0.9);
+}
